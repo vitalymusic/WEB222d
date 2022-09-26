@@ -7,9 +7,8 @@
     <title>Form elements</title>
 </head>
 <body>
-        <form action="">
+        <form action="form.php" method="GET">
            
-
             <fieldset>
                 <legend>Персональные данные:</legend>
                 <div>
@@ -60,7 +59,7 @@
                 <legend>Ваша биогафия</legend>
                 <textarea name="bio" id="" cols="30" rows="20" placeholder="Немного о себе"></textarea>
                 <legend>Ваш год рождения</legend>
-                <select name="" id="">
+                <select name="year" id="">
                     <option value="">Выберите год</option>
                     <option value="1984">1984</option>    
                     <option value="1985">1985</option>    
@@ -75,5 +74,13 @@
             </fieldset>
 
         </form>
+
+
+        <h1>Google</h1>
+        <form action="https://www.google.com/search" method="GET">
+            <input type="text" name="q">
+            <input type="submit" value="Искать в google">
+        </form>
 </body>
 </html>
+<!-- Сделать форму Регистрации в интернет магазине файл register.html -->
