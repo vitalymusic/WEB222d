@@ -14,19 +14,20 @@
                 <legend>Персональные данные:</legend>
                 <div>
                     <label for="name">Ваше имя: </label>
-                    <input type="text" id="name">
+                    <input type="text" id="name" name="name" required minlength="3" maxlength="20" placeholder="Вася">
                 </div>
                 <div>
                     <label for="surname">фамилия: </label>
-                    <input type="text" id="surname">
+                    <input type="text" id="surname" name="surname" required>
                 </div>
                 <div>
                     <label for="email">Эмайл: </label>
-                    <input type="email" id="email">
+                    <input type="email" id="email" name="email" required 
+                    pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
                 </div>
                 <div>
                     <label for="phone">Номер Телефона: </label>
-                    <input type="phone" id="phone">
+                    <input type="tel" id="phone" name="tel" required>
                 </div>
             </fieldset>
             <fieldset>
@@ -38,6 +39,41 @@
                     <input type="password" id="password_repeat">
                 </div>
             </fieldset>
+            <fieldset>
+                <legend>Настройки профиля</legend>
+                <input type="checkbox" id="agree" value="agree">        
+                <label for="agree">Согласны с условиями сервиса </label>
+                <legend>Выберите вариант ответа</legend>
+                <input type="radio" name="status" id="single" value="single">
+                <label for="single">Я холост </label>
+                <input type="radio" name="status" id="married" value="married">
+                <label for="married">Я женат</label>
+            </fieldset> 
+            <fieldset>
+                <legend>Доп Опции</legend>
+                <input type="date">
+                <input type="file" accept="image/png, image/jpeg">
+                <input type="color">
+                <input type="number" name="" id="" min="0" max="20" step="2" />
+            </fieldset> 
+            <fieldset>
+                <legend>Ваша биогафия</legend>
+                <textarea name="bio" id="" cols="30" rows="20" placeholder="Немного о себе"></textarea>
+                <legend>Ваш год рождения</legend>
+                <select name="" id="">
+                    <option value="">Выберите год</option>
+                    <option value="1984">1984</option>    
+                    <option value="1985">1985</option>    
+                    <option value="1986">1986</option>    
+                    <option value="1987">1987</option>    
+                </select>
+            </fieldset>    
+            <fieldset>
+                <input type="submit" value="Зарегистрироваться">
+                <input type="reset" value="Очистить форму">
+                <input type="hidden" name="userid" value="1">
+            </fieldset>
+
         </form>
 </body>
 </html>
