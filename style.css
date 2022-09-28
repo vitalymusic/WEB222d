@@ -1,0 +1,54 @@
+body{
+    
+    margin:0;
+    background:#d3d3d3
+    
+}
+section,header,footer{
+    padding:30px;
+    margin:30px;
+}
+header{
+    /* Блочная верстка */
+    box-sizing: border-box;
+    border:5px solid white;
+    /* Граница элемента */
+    border-style: double;
+    border-radius: 10px;
+    /* height:100px; */
+    width:75%;
+   
+    margin:200px;
+    margin-left: 20px;
+    margin: 20px 30px 20px 40px;
+    padding: 20px 30px 20px 40px;
+    margin: 30px auto;
+
+
+  background:#07ed82  
+}
+
+li{
+    background:#000000;
+    color:white; 
+}
+header h1{
+    color:red;
+}
+
+
+section#sec1{
+    background:blue;
+    width:50%;
+    margin: auto;
+}
+section#sec2{
+    background:#2fff00;
+}
+div.element h5{
+    color:#ff8400
+}
+
+div.element img{
+
+}
