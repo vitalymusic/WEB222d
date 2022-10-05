@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+
+    <style>
+        div.row div{
+            width: 250px;
+            height: 150px;
+            background-color: red;
+            margin:20px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            /* Old version */
+            /* float:left;
+            float:right; */
+            /* Применять только к картинкам */
+        }
+
+
+        div.container{
+            width: 85%;
+            height: auto;
+        }
+
+        img{
+            width: 250px;
+            margin:20px;
+            float:left;
+            float:right;
+        }
+        div.row{
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            /* flex-wrap: wrap; */
+            /* gap: 20px; */
+            height:100vh;
+            flex-direction:row-reverse
+        }
+    </style>
+</head>
+<body>
+  <div class="row">
+    <div><p>1</p></div>
+    <div><p>2</p></div>
+    <div><p>3</p></div>
+    <div><p>4</p></div>
+    <div><p>5</p></div>
+    <div><p>6</p></div>
+    <div><p>7</p></div>
+  </div>  
+    
+
+
+    <!-- <div class="container">
+        
+       lorem*5
+        <p>
+        <img src="img/pizza1.jpeg" alt="">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, facilis sit consequatur est nobis tenetur cupiditate non pariatur, tempora alias laudantium doloremque ea aspernatur odit culpa, soluta voluptas velit veniam.
+        Nesciunt exercitationem laudantium minus praesentium? Aperiam repudiandae voluptatem facilis debitis cum exercitationem eaque iusto cupiditate sapiente accusantium omnis nostrum vitae libero obcaecati id nemo non, ipsam rerum possimus facere sit?
+        Libero quia architecto recusandae at voluptates unde repellendus nisi culpa fugit quasi provident corrupti quo autem dolor, ea minus ad esse corporis aliquam, earum vero. Explicabo atque unde rerum delectus?
+        Veniam blanditiis nulla et deserunt praesentium doloribus autem. Explicabo illum reprehenderit mollitia? Sint sequi ex expedita, porro eaque tenetur praesentium sed eos atque omnis fugit beatae, magnam esse inventore. Non?
+        Laboriosam beatae unde praesentium! Dicta deleniti qui consequatur reprehenderit eveniet cupiditate saepe odit fugiat impedit eius quos pariatur accusamus ea dignissimos esse aliquam corrupti earum nihil animi illo, inventore aut.</p>
+    </div> -->
+</body>
+</html>
