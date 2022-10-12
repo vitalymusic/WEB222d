@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+        nav{
+            height: 84px;
+            display:flex;
+            justify-content: space-around;
+            background:#e9e8e8;
+            align-items:center;
+        }
+        .logo{
+            width: 69px;
+            height: 24px;
+        }
+        .left {
+            display:flex;
+            align-items: center;
+        }
+        .left ul{
+            display:flex;
+            list-style-type: none;
+            
+        }
+        .left ul li{
+            margin: 0px 20px
+        }
+        .left ul li a{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            text-transform: capitalize;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            color: #000000;
+
+        }
+        .search{
+            background: #F6F6F6;
+            border:none;
+            padding:12px 56px 12px 48px;
+            margin-right: 44px;
+        }
+        .searchBtn{
+            width: 132px;
+            height: 47px;
+            background: #149BFC;
+            color:white;
+            border:none;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <div class="logo">
+                <img src="img/logo.png" alt="">
+            </div>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Pricing</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <input type="text" class="search" name="" id="">
+            <input type="submit" class="searchBtn" value="Buy now">
+        </div>
+    </nav>
+</body>
+</html>
