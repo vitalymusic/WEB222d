@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+        body{
+            padding:0;margin:0;
+        }
+        
         nav{
             height: 84px;
             display:flex;
@@ -42,11 +48,36 @@
             color: #000000;
 
         }
+        .right{
+            display:flex;
+        }
+        .right .input{
+            padding:0;
+            position:relative;
+            display:flex;
+            align-items: center;
+        }
+        .icon{
+            position:absolute;
+            left:40px;
+            top:15px;
+        }
         .search{
             background: #F6F6F6;
             border:none;
             padding:12px 56px 12px 48px;
             margin-right: 44px;
+            /* height:100%; */
+            font-family: 'Helvetica', FontAwesome, sans-serif;
+        }
+        .searchText{
+            position:absolute;
+            right:81px;
+            top:15px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
         }
         .searchBtn{
             width: 132px;
@@ -72,9 +103,27 @@
             </ul>
         </div>
         <div class="right">
-            <input type="text" class="search" name="" id="">
+            <div class="input">
+                <input type="text" class="search" name="" id="">
+                <span class="icon fa-solid fa-magnifying-glass"></span>
+                <span class="searchText">Search for anything</span>
+            </div>
+            
             <input type="submit" class="searchBtn" value="Buy now">
         </div>
     </nav>
+
+    <script>
+        text = document.querySelectorAll(".input span");
+        
+        document.querySelector("input.search").onfocus = function(){
+            text[0].style.display = "none";
+            text[1].style.display = "none";
+        }
+        document.querySelector("input.search").onblur = function(){
+            text[0].style.display = "inline";
+            text[1].style.display = "inline";
+        }
+    </script>
 </body>
 </html>

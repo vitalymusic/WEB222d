@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+
+
+    
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <!-- v-bind:attr, связывание значений аттрибутов -->
+        <!-- внутри аттрибутов идет JS выражение -->
+        <h1 v-bind:title="h1">{{h1}}</h1>
+
+        <!-- v-bind:title == :title -->
+        <p>{{p}}</p>
+<!-- v-if позволяет показывать или скрывать блоки hml в зависимости от значения переменной true или false -->
+        <div v-if="show">
+            All in one <br>
+            {{h1}} {{p}}
+        </div>
+        <div v-else>
+            <h1>Kukuku</h1>
+        </div>
+        <div class="red" v-show="red">
+            <h1>red</h1>
+        </div>
+        <!-- Можно использовать тег template вместе с директивами и он тогда не будет отображаться -->
+
+        <!-- v-show тоже самое что и display:block/display:none -->
+
+        <!-- Для манипуляций с классами используем  v-bind:class="{active:isactive}" где isactive это ключ внутри объекта Vue название класса отображается active-->
+        <!--  -->
+        <button v-bind:class="{active:isActive}">Button</button>
+
+        <input type="text" v-bind:class="[isActive ? 'active input': 'disabled']">
+        <!-- так же внутри классов можно использовать и тернарные выражения -->
+        <h1 v-on:click="showConsole">Tables</h1>
+        <!-- для вывода элементов массива требуется директива v-for -->
+        <table>
+            <thead>
+                <tr>
+                    <td>Username</td>
+                    <td>Password</td>
+                </tr>
+                <tbody>
+                    <tr v-for="user in users">
+                        <td>{{user.username}}</td>
+                        <td>{{user.password}}</td>
+                    </tr>
+                </tbody>
+
+            </thead>
+        </table>
+        <div class="clickme">
+            <h1 v-on:click="showAlert">click me</h1> 
+        </div>
+        <div class="counter">
+            <h1>{{counter}}</h1>
+            <button @click="down">-</button>
+            <button @click="up">+</button>
+        </div>
+
+
+        <h1>Загрузка списка с сервера</h1>
+            <button @click="loadData">Load data...</button>
+            <ul>
+                <li v-for="list in lists">{{list}}</li>
+            </ul>
+            
+            <input type="text" v-model="textInput">
+            <!-- v-model используется для двунаправленного связывания элементов -->
+            <h1>{{textInput}}</h1>
+    </div>
+    
+
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                h1:"Hello World",
+                p:"Lorem ipsum dolor sit amet, consectetur adipis",
+                lists:[],
+                show:false, //false cкроет элемент
+                red:0,
+                isActive:0,
+                counter:0,
+                textInput:"",
+                url:{
+                    hashtags:"https://dka-develop.ru/api?type=hashtag",
+                    cities:"https://dka-develop.ru/api?type=city"
+                },
+                users:[ //используем массив с объектами
+                    {
+                        username:"Vitalymusic",
+                        password:"123123123123"
+                    },
+                    {
+                        username:"AnnaKor",
+                        password:"5434535345"
+                    },
+                    {
+                        username:"SofijaKor",
+                        password:"ksjdfhksjdfh"
+                    }
+                ]
+            },
+            watch:{
+                // Наблюдатели следят за изменением свойств в объекте Vue
+                // textInput: function(){
+                //     if(this.textInput.length >3){
+                //         this.textInput = "More than 3"
+                //     }
+                // }
+            },
+            methods:{
+                //методы используются для написания функцмй для событий - например при клике на элементе (v-on:click="" или просто @click="")
+                    showConsole(){
+                        console.log(this);
+                    },
+                    showAlert(){
+                        alert(this);
+                    },
+                    up(){
+                        this.counter++;
+                    },
+                    down(){
+                        this.counter--;
+                    },
+                    loadData(){
+                        console.log("loading...");
+                        axios.get(this.url.hashtags).then((response)=>{
+                            console.log(response.data);
+                            this.lists = response.data;
+                        })
+                    }
+                    
+            }
+        })
+    </script>
+</body>
+</html>
