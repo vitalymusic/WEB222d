@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+        .slide>img{
+            height:350px;
+        }
+        .slider{
+            height:350px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{heading}}</h1>
+
+        <div class="slider">
+            <div v-for="slide in slides"class="slide">
+                <h5>{{slide.title}}</h5>
+                <img v-bind:src="slide.url" alt="slide">
+            </div>
+            <div class="buttons">
+                <button @click="prevSlide()">Left</button>
+                <button @click="nextSlide()">Right</button>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                heading:"Это мой слайдер",
+                slides:[
+                    {
+                    title:"Slide 1",
+                    url:"https://picsum.photos/id/230/800/300",
+                    },
+                    {
+                    title:"Slide 2",
+                    url:"https://picsum.photos/id/231/800/300",
+                    },     
+                    {
+                    title:"Slide 3",
+                    url:"https://picsum.photos/id/232/800/300",
+                    },
+                ],
+                currSlide:0,
+                slideCount:0,
+
+            },
+            methods:{
+
+                initSlider(){
+                   this.showSlide(this.currSlide);            
+                },
+                showSlide(n){
+                    this.slideCount= this.$el.querySelectorAll(".slide");
+                    // initSlider();
+                    this.slideCount.forEach((item)=>{
+                        item.style.display = "none";
+                    });
+                    this.slideCount[n].style.display = "block";
+                    console.log(this.currSlide); 
+                },
+                nextSlide(){
+                    this.currSlide++
+                    if(this.currSlide > this.slideCount.length - 1){
+                        this.currSlide=0;
+                    }
+                    this.showSlide(this.currSlide);
+                    
+                },
+                prevSlide(){
+                    this.currSlide--;
+                    if(this.currSlide<0){
+                        this.currSlide=this.slideCount.length - 1;
+                    }
+                    this.showSlide(this.currSlide);
+                    
+                }
+
+            },
+            mounted:function(){
+                this.initSlider();
+            }
+        })
+    </script>
+</body>
+</html>
