@@ -1,0 +1,25 @@
+{
+    "editor.fontSize": 18,
+    "editor.wordWrap": "on",
+    "liveSassCompile.settings.formats":[
+        {
+        "format": "compressed",
+        "extensionName": ".min.css",
+        "savePath": "/style"
+        }
+    ],
+    "liveSassCompile.settings.autoprefix": [
+    
+    
+        "> 1%",
+        "last 2 versions"
+    ],
+    "git.autofetch": true,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.nonBasicASCII": false,
+    "tabnine.experimentalAutoImports": true,
+    
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 1,
+
+}
